@@ -9,9 +9,6 @@ namespace Ray.EssayNotes.AsyncAndThread.Test
     [Description("异常捕捉")]
     public class Test11 : ITest
     {
-        private bool _isDone;
-        private readonly object _locker = new object();
-
         public void Run()
         {
             try
