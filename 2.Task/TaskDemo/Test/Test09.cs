@@ -8,33 +8,30 @@ using Ray.Infrastructure.Test;
 
 namespace Ray.EssayNotes.TaskDemo.Test
 {
-    [Description("使用TaskCompletionSource类创建一个不绑定线程的任务")]
+    [Description("TaskCompletionSource：创建任务")]
     public class Test09 : ITest
     {
         public void Run()
         {
-            TaskAwaiter<int> awaiter = GetAnswerToLife().GetAwaiter();
-
-            awaiter.OnCompleted(() => Console.WriteLine(awaiter.GetResult()));
-        }
-
-        private Task<int> GetAnswerToLife()
-        {
             var taskCompletionSource = new TaskCompletionSource<int>();
 
-            var timer = new System.Timers.Timer(5000)
-            {
-                AutoReset = false
-            };
-            timer.Elapsed += delegate
-            {
-                timer.Dispose();
-                taskCompletionSource.SetResult(42);
-            };
+            var thread = new Thread(() =>
+             {
+                 Thread.Sleep(3000);
+                 taskCompletionSource.SetResult(42);
+             });
+            thread.IsBackground = true;
+            thread.Start();
 
-            timer.Start();
-
-            return taskCompletionSource.Task;
+            Thread.Sleep(5000);
+            Task<int> task = taskCompletionSource.Task;
+            Console.WriteLine(task.Result);
         }
+
+        /*
+         * TaskCompletionSource可以创建一个任务，
+         * 但是这种任务并非那种需要执行启动操作并在随后停止的任务；而是在操作结束或出错时手动创建的“附属”任务。
+         * 因为其Task属性返回一个Task对象，所以我们可以等待这个对象，也可以和其他的所有任务一样，在其上附加延续。
+         */
     }
 }
