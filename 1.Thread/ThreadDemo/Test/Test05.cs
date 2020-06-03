@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Threading;
+using Ray.Infrastructure.Test;
 
-namespace Ray.EssayNotes.AsyncAndThread.Test
+namespace Ray.EssayNotes.ThreadDemo.Test
 {
     [Description("原始Thread：使用Yield或Sleep(0)让出线程对CPU的占用")]
     public class Test05 : ITest

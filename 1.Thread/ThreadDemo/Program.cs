@@ -1,8 +1,8 @@
 ﻿using System;
-using Ray.EssayNotes.AsyncAndThread.Test;
 using Ray.Infrastructure.Extensions.Json;
+using Ray.Infrastructure.Test;
 
-namespace Ray.EssayNotes.AsyncAndThread
+namespace Ray.EssayNotes.ThreadDemo
 {
     class Program
     {
@@ -10,15 +10,16 @@ namespace Ray.EssayNotes.AsyncAndThread
         {
             Console.WriteLine("Hello World!");
 
+            var factory = new TestFactory();
             while (true)
             {
                 Console.WriteLine("\r\n请输入测试用例：");
-                Console.WriteLine(TestFactory.Selections.AsFormatJsonStr());
+                Console.WriteLine(factory.Selections.AsFormatJsonStr());
 
                 string num = Console.ReadLine();
                 if (num.IsNullOrWhiteSpace()) continue;
 
-                ITest test = TestFactory.Create(num);
+                ITest test = factory.Create(num);
                 test.Run();
             }
         }

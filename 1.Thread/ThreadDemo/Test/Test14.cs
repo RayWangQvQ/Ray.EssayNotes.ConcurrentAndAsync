@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Threading;
-using Ray.Infrastructure.Extensions.Json;
+using Ray.Infrastructure.Test;
 
-namespace Ray.EssayNotes.AsyncAndThread.Test
+namespace Ray.EssayNotes.ThreadDemo.Test
 {
     [Description("线程间的信号发送")]
     public class Test14 : ITest

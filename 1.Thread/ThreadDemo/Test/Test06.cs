@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Threading;
+using Ray.Infrastructure.Test;
 
-namespace Ray.EssayNotes.AsyncAndThread.Test
+namespace Ray.EssayNotes.ThreadDemo.Test
 {
     [Description("阻塞与自旋")]
     public class Test06 : ITest

@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Threading;
+using Ray.Infrastructure.Test;
 
-namespace Ray.EssayNotes.AsyncAndThread.Test
+namespace Ray.EssayNotes.ThreadDemo.Test
 {
     [Description("后台线程")]
     public class Test12 : ITest
