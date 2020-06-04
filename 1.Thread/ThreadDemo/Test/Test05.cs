@@ -5,7 +5,7 @@ using Ray.Infrastructure.Test;
 
 namespace Ray.EssayNotes.ThreadDemo.Test
 {
-    [Description("原始Thread：使用Yield或Sleep(0)让出线程对CPU的占用")]
+    [Description("使用Yield或Sleep(0)让出线程对CPU的占用")]
     public class Test05 : ITest
     {
         public void Run()

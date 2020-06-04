@@ -5,7 +5,7 @@ using Ray.Infrastructure.Test;
 
 namespace Ray.EssayNotes.ThreadDemo.Test
 {
-    [Description("原始Thread：使用Join等待线程执行结束")]
+    [Description("使用Join等待线程执行结束")]
     public class Test03 : ITest
     {
         public void Run()

@@ -5,18 +5,18 @@ using Ray.Infrastructure.Test;
 
 namespace Ray.EssayNotes.ThreadDemo.Test
 {
-    [Description("使用原始Thread")]
+    [Description("使用Thread开启新线程")]
     public class Test01 : ITest
     {
         public void Run()
         {
-            var thread = new Thread(Print1);
+            var thread = new Thread(PrintA);
             thread.Start();
 
-            Print2();
+            PrintB();
         }
 
-        private void Print1()
+        private void PrintA()
         {
             for (int i = 0; i < 1000; i++)
             {
@@ -24,7 +24,7 @@ namespace Ray.EssayNotes.ThreadDemo.Test
             }
         }
 
-        private void Print2()
+        private void PrintB()
         {
             for (int i = 0; i < 1000; i++)
             {

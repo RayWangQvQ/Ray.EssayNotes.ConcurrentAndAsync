@@ -9,7 +9,7 @@ using Ray.Infrastructure.Test;
 namespace Ray.EssayNotes.TaskDemo.Test
 {
     [Description("TaskCompletionSource：创建一个不绑定线程的任务")]
-    public class Test11 : ITest
+    public class Test32 : ITest
     {
         public void Run()
         {

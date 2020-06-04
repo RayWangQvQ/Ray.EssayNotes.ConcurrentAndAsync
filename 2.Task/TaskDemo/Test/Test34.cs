@@ -9,10 +9,12 @@ using Ray.Infrastructure.Test;
 namespace Ray.EssayNotes.TaskDemo.Test
 {
     [Description("Task.Delay")]
-    public class Test13 : ITest
+    public class Test34 : ITest
     {
         public void Run()
         {
+            Task.Delay(3000);
+
             Task.Delay(3000)
                 .GetAwaiter()
                 .OnCompleted(() => Console.WriteLine("哈哈哈"));

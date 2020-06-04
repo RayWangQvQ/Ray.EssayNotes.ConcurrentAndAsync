@@ -5,7 +5,7 @@ using Ray.Infrastructure.Test;
 
 namespace Ray.EssayNotes.ThreadDemo.Test
 {
-    [Description("原始Thread：打印线程Id即名称")]
+    [Description("打印线程Id及名称")]
     public class Test02 : ITest
     {
         public void Run()

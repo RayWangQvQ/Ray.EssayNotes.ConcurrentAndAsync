@@ -11,7 +11,7 @@ namespace Ray.EssayNotes.TaskDemo.Test
     {
         public void Run()
         {
-            Console.WriteLine($"哈哈哈，当前线程：{Thread.CurrentThread.ManagedThreadId}；是否来自线程池：{Thread.CurrentThread.IsThreadPoolThread}");
+            Console.WriteLine($"哈哈哈，Run线程：{Thread.CurrentThread.ManagedThreadId}；是否来自线程池：{Thread.CurrentThread.IsThreadPoolThread}");
 
             Task<bool> task = Task.Run(Work);
             bool success = task.Result;//如果任务还未执行完毕，调用Result属性会阻塞当前线程，直至任务结束
@@ -21,7 +21,7 @@ namespace Ray.EssayNotes.TaskDemo.Test
         private bool Work()
         {
             Thread.Sleep(3000);
-            Console.WriteLine($"嘿嘿嘿，当前线程：{Thread.CurrentThread.ManagedThreadId}；是否来自线程池：{Thread.CurrentThread.IsThreadPoolThread}");
+            Console.WriteLine($"嘿嘿嘿，Work线程：{Thread.CurrentThread.ManagedThreadId}；是否来自线程池：{Thread.CurrentThread.IsThreadPoolThread}");
             return true;
         }
 

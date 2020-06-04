@@ -8,20 +8,27 @@ using Ray.Infrastructure.Test;
 
 namespace Ray.EssayNotes.TaskDemo.Test
 {
-    [Description("延续，TaskAwaiter实现")]
-    public class Test06 : ITest
+    [Description("延续，TaskAwaiter实现：使用ConfigureAwait配置延续是否捕获上下文")]
+    public class Test21 : ITest
     {
         public void Run()
         {
             Task<int> task = Task.Run(Go);
 
-            TaskAwaiter<int> taskAwaiter = task.GetAwaiter();
+            ConfiguredTaskAwaitable<int>.ConfiguredTaskAwaiter taskAwaiter =
+                task.ConfigureAwait(false)
+                    .GetAwaiter();
 
-            //告诉先导任务执行完毕后，接着执行这里的委托：
+            /*
+             * 如果提供了同步上下文，则OnCompleted就会自动捕获它，并将延续提交到这个上下文中。
+             * 这对于富客户端应用程序来说非常重要，因为这意味着将延续放回UI线程中。
+             * 但如果编写的是一个程序库，则通常不希望出现上述行为。此时可以使用ConfigureAwait(false)指定其不自动捕捉上下文
+             * 即延续任务通常仍会在先导任务所在线程上运行
+             */
+
             taskAwaiter.OnCompleted(() =>
             {
                 int result = taskAwaiter.GetResult();
-                //int result = task.Result;//两种获取任务执行结果的方法都行，这里可能会捕捉到先导任务的异常（不是包装后的AggregateException，而是原始异常，因为当前代码就处于先导任务的线程中）
 
                 Console.WriteLine(result);
                 Console.WriteLine($"OnCompleted线程：{Thread.CurrentThread.ManagedThreadId}");
@@ -43,11 +50,5 @@ namespace Ray.EssayNotes.TaskDemo.Test
                         .All(i => x % i > 0));
             return count;
         }
-
-        /*
-         * Awaiter直译为“等待者”
-         * 这里任务完成后，会接着去执行OnCompleted方法内指定的委托
-         * 且通常情况下，延续任务仍会在先导任务所在线程上运行，从而避免不必要的开销
-         */
     }
 }

@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ray.EssayNotes.TaskDemo", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ray.EssayNotes.ThreadDemo", "1.Thread\ThreadDemo\Ray.EssayNotes.ThreadDemo.csproj", "{FB210FA0-1808-499A-B496-5B96498605A4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Async", "3.Async", "{9FE3E39B-CE2E-4ACF-A0E6-5F3819736E03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ray.EssayNotes.AsyncDemo", "3.Async\AsyncDemo\Ray.EssayNotes.AsyncDemo.csproj", "{DA28F086-0E84-479F-BE65-70359E5E58DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,10 @@ Global
 		{FB210FA0-1808-499A-B496-5B96498605A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB210FA0-1808-499A-B496-5B96498605A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB210FA0-1808-499A-B496-5B96498605A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA28F086-0E84-479F-BE65-70359E5E58DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA28F086-0E84-479F-BE65-70359E5E58DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA28F086-0E84-479F-BE65-70359E5E58DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA28F086-0E84-479F-BE65-70359E5E58DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +46,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{81977BFA-5CD4-4808-9BA0-CB3BF8BECB7D} = {D1EEA31F-20F4-4021-BC10-9F3B7BF9ECDC}
 		{FB210FA0-1808-499A-B496-5B96498605A4} = {8D81C7DA-2ADE-4AFE-8514-D900024BF4EF}
+		{DA28F086-0E84-479F-BE65-70359E5E58DD} = {9FE3E39B-CE2E-4ACF-A0E6-5F3819736E03}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {433B74AD-0058-4E25-B9A1-00E8B2D54567}

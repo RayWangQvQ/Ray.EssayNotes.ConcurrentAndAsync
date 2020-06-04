@@ -2,7 +2,7 @@
 using Ray.Infrastructure.Extensions.Json;
 using Ray.Infrastructure.Test;
 
-namespace Ray.EssayNotes.TaskDemo
+namespace Ray.EssayNotes.AsyncDemo
 {
     class Program
     {

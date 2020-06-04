@@ -9,7 +9,7 @@ using Ray.Infrastructure.Test;
 namespace Ray.EssayNotes.TaskDemo.Test
 {
     [Description("延续：ContinueWith实现")]
-    public class Test08 : ITest
+    public class Test22 : ITest
     {
         public void Run()
         {
@@ -27,7 +27,7 @@ namespace Ray.EssayNotes.TaskDemo.Test
                 Console.WriteLine($"延续的延续线程：{Thread.CurrentThread.ManagedThreadId}");
             });
 
-            Console.WriteLine("Done");
+            Console.WriteLine("Run结束");
         }
 
         /// <summary>

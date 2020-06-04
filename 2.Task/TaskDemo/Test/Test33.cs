@@ -9,7 +9,7 @@ using Ray.Infrastructure.Test;
 namespace Ray.EssayNotes.TaskDemo.Test
 {
     [Description("TaskCompletionSource：自己实现一个Delay")]
-    public class Test12 : ITest
+    public class Test33 : ITest
     {
         public void Run()
         {
@@ -20,7 +20,7 @@ namespace Ray.EssayNotes.TaskDemo.Test
 
         private Task Delay(int milliseconds)
         {
-            var taskCompletionSource = new TaskCompletionSource<object>();
+            var taskCompletionSource = new TaskCompletionSource<object>();//因为最后要返回Task，所以这里使用object作为泛型，方便最后隐式转换
 
             var timer = new System.Timers.Timer(milliseconds)
             {

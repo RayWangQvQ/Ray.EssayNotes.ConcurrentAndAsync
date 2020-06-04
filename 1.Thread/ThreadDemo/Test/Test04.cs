@@ -5,7 +5,7 @@ using Ray.Infrastructure.Test;
 
 namespace Ray.EssayNotes.ThreadDemo.Test
 {
-    [Description("原始Thread：使用Sleep命令当前线程休眠(阻塞)")]
+    [Description("使用Sleep命令当前线程休眠(阻塞)")]
     public class Test04 : ITest
     {
         public void Run()

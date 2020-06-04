@@ -11,7 +11,7 @@ namespace Ray.EssayNotes.TaskDemo.Test
     {
         public void Run()
         {
-            Console.WriteLine($"哈哈哈，当前线程：{Thread.CurrentThread.ManagedThreadId}；是否来自线程池：{Thread.CurrentThread.IsThreadPoolThread}");
+            Console.WriteLine($"哈哈哈，Run线程：{Thread.CurrentThread.ManagedThreadId}；是否来自线程池：{Thread.CurrentThread.IsThreadPoolThread}");
 
             Task.Factory.StartNew(Work);//.NET 4.0
             Task.Run(Work);//.NET 4.5
@@ -19,7 +19,7 @@ namespace Ray.EssayNotes.TaskDemo.Test
 
         private void Work()
         {
-            Console.WriteLine($"嘿嘿嘿，当前线程：{Thread.CurrentThread.ManagedThreadId}；是否来自线程池：{Thread.CurrentThread.IsThreadPoolThread}");
+            Console.WriteLine($"嘿嘿嘿，Work线程：{Thread.CurrentThread.ManagedThreadId}；是否来自线程池：{Thread.CurrentThread.IsThreadPoolThread}");
         }
 
         /*

@@ -9,7 +9,7 @@ using Ray.Infrastructure.Test;
 namespace Ray.EssayNotes.TaskDemo.Test
 {
     [Description("TaskCompletionSource：创建任务")]
-    public class Test09 : ITest
+    public class Test30 : ITest
     {
         public void Run()
         {
