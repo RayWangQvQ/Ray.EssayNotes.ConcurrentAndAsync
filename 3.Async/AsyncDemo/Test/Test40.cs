@@ -11,7 +11,7 @@ using Ray.Infrastructure.Test;
 namespace Ray.EssayNotes.AsyncDemo.Test
 {
     [Description("异步的执行顺序")]
-    public class Test30 : ITest
+    public class Test40 : ITest
     {
         public void Run()
         {

@@ -11,7 +11,7 @@ using Ray.Infrastructure.Test;
 namespace Ray.EssayNotes.AsyncDemo.Test
 {
     [Description("使用ConfigureAwait阻止大量回弹")]
-    public class Test50 : ITest
+    public class Test60 : ITest
     {
         public void Run()
         {
